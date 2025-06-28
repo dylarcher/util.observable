@@ -39,7 +39,7 @@ export const test = (/** @type {TestArgs} */ { subject, fn, args, expect }) => {
       : info('☑️ Actual:', actual);
     info(
       `${status ? '✅' : '❌'} %cStatus: ${actual} ${status ? '===' : '!=='} ${expect}`,
-      `color: ${!status ? 'tomato' : 'seagreen'}; font - weight: 800; `
+      `color: ${!status ? 'tomato' : 'seagreen'}; font-weight: 800; `
     );
 
     assert(status, subject);
