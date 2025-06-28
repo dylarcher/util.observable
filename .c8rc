@@ -1,0 +1,52 @@
+{
+  "all": true,
+  "extension": [".js"],
+  "reporter-options": {
+    "html": "inline",
+    "lcov": "text",
+    "json": "coverage.json"
+  },
+  "check-coverage": true,
+  "lines": 100,
+  "functions": 100,
+  "branches": 100,
+  "statements": 100,
+  "per-file": true,
+  "clean": true,
+  "exclude": [
+    "utils.js",
+    "**/*.spec.js",
+    "**/*.test.js",
+    "coverage/**",
+    "packages/*/test{,s}/**",
+    "**/*.d.ts",
+    "**/tests/**",
+    "test{,s}/**",
+    "test{,-*}.{js,cjs,mjs,ts,tsx,jsx}",
+    "**/{ava,nyc}.config.{js,cjs,mjs}",
+    "**/.{eslint,mocha,prettier}rc.{js,cjs,yml,yaml}",
+    "**/{jest,vitest,karma}.config.{js,cjs,mjs}",
+    "**/{babel,webpack}.config.{js,cjs,mjs}",
+    "**/{stylelint,tailwind}.config.{js,cjs,mjs}",
+    "**/rollup.config.js",
+    "**/gulpfile.{js,cjs,mjs}",
+    "**/Gruntfile.js",
+    "**/vite.config.{js,cjs,mjs,ts}",
+    "**/deno.json",
+    "**/deno.jsonc",
+    "**/jsconfig.json",
+    "**/tsconfig.json"
+  ],
+  "include": ["main.js"],
+  "reporter": ["text", "html", "lcov", "json"],
+  "reports-dir": "./tests/coverage",
+  "skip-full": false,
+  "temp-directory": "./tests/coverage/.tmp",
+  "watermarks": {
+    "branches": [100, 100],
+    "functions": [100, 100],
+    "lines": [100, 100],
+    "statements": [100, 100]
+  }
+}
+

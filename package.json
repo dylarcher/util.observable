@@ -1,0 +1,12 @@
+{
+  "name": "js.observables",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "test": "node --test main.spec.js",
+    "coverage": "npx c8 -- npm test"
+  },
+  "author": "Dylan Archer <dylarcher@gmail.com>",
+  "license": "ISC",
+  "type": "module"
+}

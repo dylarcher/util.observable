@@ -1,0 +1,6 @@
+{
+  "typeAcquisition": {
+    "enable": true,
+    "include": ["c8", "node"]
+  }
+}
