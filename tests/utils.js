@@ -3,7 +3,17 @@
  * @author Dylan Archer
  */
 
-const { time, table, info, assert, groupCollapsed, timeEnd, groupEnd, count, warn } = console;
+const {
+  time,
+  table,
+  info,
+  assert,
+  groupCollapsed,
+  timeEnd,
+  groupEnd,
+  count,
+  warn,
+} = console;
 
 /**
  * @typedef {object} TestArgs
@@ -15,7 +25,7 @@ const { time, table, info, assert, groupCollapsed, timeEnd, groupEnd, count, war
 export const test = (/** @type {TestArgs} */ { subject, fn, args, expect }) => {
   try {
     groupCollapsed(subject);
-    count(`#️⃣ Caller`);
+    count('#️⃣ Caller');
 
     time('⏱️ Timing');
     const actual = fn(...args);
@@ -27,18 +37,20 @@ export const test = (/** @type {TestArgs} */ { subject, fn, args, expect }) => {
     typeof actual === 'object'
       ? table(JSON.stringify(actual, null, 2))
       : info('☑️ Actual:', actual);
-    info(`${status ? '✅' : '❌'} %cStatus: ${actual} ${status ? '===' : '!=='} ${expect}`, `color: ${!status ? 'tomato' : 'seagreen'}; font - weight: 800; `);
+    info(
+      `${status ? '✅' : '❌'} %cStatus: ${actual} ${status ? '===' : '!=='} ${expect}`,
+      `color: ${!status ? 'tomato' : 'seagreen'}; font-weight: 800; `
+    );
 
     assert(status, subject);
-    !!status && warn(`Assertion passed:`, subject);
+    !!status && warn('Assertion passed:', subject);
 
     groupEnd();
     return status;
-  }
-  catch (/** @type {any} */ error) {
+  } catch (/** @type {any} */ error) {
     const { message = error } = error ?? {};
     groupCollapsed(message);
-    count(`COUNT`);
+    count('COUNT');
     groupEnd();
     return false;
   }

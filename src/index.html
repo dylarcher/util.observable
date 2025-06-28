@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Observables</title>
+  </head>
+  <body>
+    <h1>Welcome to JS Observables</h1>
+    <p>This is a basic HTML document.</p>
+
+    <script async type="module">
+      await import('./main.js');
+      await import('./tests/utils.js');
+      const { ObservableService } = await import('./main.js');
+
+      const observable = new ObservableService({
+        task: 'some to do item',
+        description: 'This is a description of the task.',
+        dueDate: '2023-10-15',
+        tags: ['work', 'urgent'],
+        assignedTo: 'John Doe',
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString(),
+        priority: 'low',
+        completed: false,
+        schedule: [
+          { date: '2023-10-01', time: '10:00' },
+          { date: '2023-10-02', time: '14:00' },
+        ],
+        onUpdate(state) {
+          console.info('State updated:', state);
+        },
+      });
+
+      observable.subscribe((data) => {
+        console.info('Data received', { data });
+      });
+
+      observable.emitQueued({ state: observable.state });
+    </script>
+  </body>
+</html>
