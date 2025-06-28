@@ -33,7 +33,7 @@
     "url": "git+https://github.com/dylarcher/util.observable.git"
   },
   "files": [
-    "main.js",
+    "src/main.js",
     "LICENSE",
     "README.md"
   ],
