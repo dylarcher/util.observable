@@ -16,31 +16,15 @@
   "per-file": true,
   "clean": true,
   "exclude": [
-    "utils.js",
-    "**/*.spec.js",
-    "**/*.test.js",
-    "coverage/**",
-    "packages/*/test{,s}/**",
-    "**/*.d.ts",
-    "**/tests/**",
-    "test{,s}/**",
-    "test{,-*}.{js,cjs,mjs,ts,tsx,jsx}",
-    "**/{ava,nyc}.config.{js,cjs,mjs}",
-    "**/.{eslint,mocha,prettier}rc.{js,cjs,yml,yaml}",
-    "**/{jest,vitest,karma}.config.{js,cjs,mjs}",
-    "**/{babel,webpack}.config.{js,cjs,mjs}",
-    "**/{stylelint,tailwind}.config.{js,cjs,mjs}",
-    "**/rollup.config.js",
-    "**/gulpfile.{js,cjs,mjs}",
-    "**/Gruntfile.js",
-    "**/vite.config.{js,cjs,mjs,ts}",
-    "**/deno.json",
-    "**/deno.jsonc",
-    "**/jsconfig.json",
-    "**/tsconfig.json"
+    "node_modules/**",
+    ".github/**",
+    "dist/**",
+    "tests/**",
+    "src/**/*.test.js",
+    "src/**/*.spec.js"
   ],
   "include": [
-    "main.js"
+    "src/**/*.js"
   ],
   "reporter": [
     "text",

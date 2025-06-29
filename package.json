@@ -11,8 +11,8 @@
   },
   "scripts": {
     "build": "tsc --sourceMap --declaration",
-    "test": "node --test src/main.test.js src/utils.test.js src/logger.test.js src/coverage-completion.test.js",
-    "coverage": "npx c8 --include='src/**/*.js' --exclude='src/**/*.spec.js' --exclude='src/**/*.test.js' -- npm test"
+    "test": "node --test src/main.test.js src/utils.test.js src/logger.test.js src/coverage-completion.test.js src/asynctest-coverage.test.js",
+    "coverage": "npx c8 -- npm test"
   },
   "author": "Dylan Archer <dylarcher@gmail.com>",
   "license": "ISC",
