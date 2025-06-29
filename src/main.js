@@ -27,13 +27,15 @@ export /** @type {ObservableTypes} */ class ObservableService {
     /** @type {ProxyHandler<object>} */
     const agent = {
       set: (target, key, value, receiver) => {
+        const hadChange = !Object.is(Reflect.get(this.#target, key), value);
         const result = this.amendState(key, value);
-        result && this.addToQueue(this.#target);
+        hadChange && result && this.addToQueue(this.#target);
         return result;
       },
       deleteProperty: (target, key) => {
+        const hadChange = Object.hasOwn(this.#target, key);
         const result = this.pruneState(key);
-        result && this.addToQueue(this.#target);
+        hadChange && result && this.addToQueue(this.#target);
         return result;
       },
     };

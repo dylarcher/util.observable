@@ -1,4 +1,4 @@
-import { test } from '../tests/utils.js';
+import { test } from './utils.js';
 import { ObservableService } from './main.js';
 
 console.group('🧪 ObservableService Tests');
@@ -89,7 +89,7 @@ test({
   subject: 'Unsubscribe method removes a subscriber successfully',
   fn: () => {
     const service = new ObservableService();
-    const subscriber = () => {};
+    const subscriber = () => { };
     service.subscribe(subscriber);
     service.unsubscribe(subscriber);
     // Test that unsubscribe doesn't throw
@@ -104,8 +104,8 @@ test({
   subject: 'UnsubscribeAll method removes all subscribers',
   fn: () => {
     const service = new ObservableService();
-    const subscriber1 = () => {};
-    const subscriber2 = () => {};
+    const subscriber1 = () => { };
+    const subscriber2 = () => { };
     service.subscribe(subscriber1);
     service.subscribe(subscriber2);
     service.unsubscribeAll();

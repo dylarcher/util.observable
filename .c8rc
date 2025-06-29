@@ -1,6 +1,8 @@
 {
   "all": true,
-  "extension": [".js"],
+  "extension": [
+    ".js"
+  ],
   "reporter-options": {
     "html": "inline",
     "lcov": "text",
@@ -37,15 +39,34 @@
     "**/jsconfig.json",
     "**/tsconfig.json"
   ],
-  "include": ["main.js"],
-  "reporter": ["text", "html", "lcov", "json"],
+  "include": [
+    "main.js"
+  ],
+  "reporter": [
+    "text",
+    "html",
+    "lcov",
+    "json"
+  ],
   "reports-dir": "./tests/coverage",
   "skip-full": false,
   "temp-directory": "./tests/coverage/.tmp",
   "watermarks": {
-    "branches": [100, 100],
-    "functions": [100, 100],
-    "lines": [100, 100],
-    "statements": [100, 100]
+    "branches": [
+      100,
+      100
+    ],
+    "functions": [
+      100,
+      100
+    ],
+    "lines": [
+      100,
+      100
+    ],
+    "statements": [
+      100,
+      100
+    ]
   }
 }

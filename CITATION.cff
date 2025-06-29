@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: 'If you use this software, please cite it as below.'
+type: software
+authors:
+  - family-names: 'Dylan'
+    given-names: 'Archer'
+    orcid: 'https://orcid.org/0009-0004-9903-2084'
+title: 'util.observable'
+version: 1.0.0
+date-released: 2024-01-01
+url: 'https://github.com/dylarcher/util.observable'
+repository-code: 'https://github.com/dylarcher/util.observable'
+license: MIT
+abstract: 'A utility library for observable patterns'
+keywords:
+  - utility
+  - observable
+  - patterns
