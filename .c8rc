@@ -1,0 +1,56 @@
+{
+  "all": true,
+  "extension": [
+    ".js"
+  ],
+  "reporter-options": {
+    "html": "inline",
+    "lcov": "text",
+    "json": "coverage.json"
+  },
+  "check-coverage": true,
+  "lines": 100,
+  "functions": 100,
+  "branches": 100,
+  "statements": 100,
+  "per-file": true,
+  "clean": true,
+  "exclude": [
+    "node_modules/**",
+    ".github/**",
+    "dist/**",
+    "tests/**",
+    "src/**/*.test.js",
+    "src/**/*.spec.js"
+  ],
+  "include": [
+    "src/**/*.js"
+  ],
+  "reporter": [
+    "text",
+    "html",
+    "lcov",
+    "json"
+  ],
+  "reports-dir": "./tests/coverage",
+  "skip-full": false,
+  "temp-directory": "./tests/coverage/.tmp",
+  "watermarks": {
+    "branches": [
+      100,
+      100
+    ],
+    "functions": [
+      100,
+      100
+    ],
+    "lines": [
+      100,
+      100
+    ],
+    "statements": [
+      100,
+      100
+    ]
+  }
+}

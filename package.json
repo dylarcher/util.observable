@@ -2,16 +2,17 @@
   "name": "js.observables",
   "version": "1.0.0",
   "description": "A javascript utility to track changes to state using the Proxy API.",
-  "main": "src/main.js",
+  "main": "dist/main.js",
   "source": "src/index.html",
   "type": "module",
+  "engines": {
+    "node": ">=22.16.0",
+    "npm": ">=10.8.2"
+  },
   "scripts": {
-    "build": "tsc",
-    "test": "node --test src/main.spec.js",
-    "lint": "eslint . --fix",
-    "format": "prettier --write .",
-    "prebuild": "npm run lint && npm run format",
-    "coverage": "npx c8 --include='src/**/*.js' --exclude='src/**/*.spec.js' --exclude='src/**/*.test.js' -- npm test"
+    "build": "tsc --sourceMap --declaration",
+    "test": "node --test src/main.test.js src/utils.test.js src/logger.test.js src/coverage-completion.test.js src/asynctest-coverage.test.js",
+    "coverage": "npx c8 -- npm test"
   },
   "author": "Dylan Archer <dylarcher@gmail.com>",
   "license": "ISC",
@@ -33,14 +34,14 @@
     "url": "git+https://github.com/dylarcher/util.observable.git"
   },
   "files": [
-    "src/main.js",
+    "main.js",
     "LICENSE",
     "README.md"
   ],
   "devDependencies": {
-    "c8": "10.1.3",
-    "eslint": "^9.30.0",
-    "eslint-config-prettier": "^10.1.5",
-    "prettier": "^3.6.2"
+    "c8": "10.1.3"
+  },
+  "peerDependencies": {
+    "typescript": "5.8.3"
   }
 }
